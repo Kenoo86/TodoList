@@ -11,26 +11,31 @@ class AuthScreen extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            GestureDetector(
-              child: Container(
-                margin: const EdgeInsets.only(top: 20, left: 250),
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 20, right: 20),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                    ),
+                    width: 120,
+                    height: 35,
+                    child: const Center(
+                        child: Text(
+                      'Use offline',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 18,
+                      ),
+                    )),
                   ),
                 ),
-                width: 120,
-                height: 35,
-                child: const Center(
-                    child: Text(
-                  'Use offline',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 18,
-                  ),
-                )),
-              ),
+              ],
             ),
             const SizedBox(
               height: 50,

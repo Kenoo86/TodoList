@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:todo/view/home/my_home_screen.dart';
+import 'package:todo/view/new_tasks/new_tasks_screen.dart';
 import 'package:todo/view/splach/splash_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.blue,
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: const NewTasksScreen(),
     );
   }
 }
