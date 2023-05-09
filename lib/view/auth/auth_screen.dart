@@ -91,7 +91,7 @@ class AuthScreen extends StatelessWidget {
                   filled: true,
                   label: const Text('Password'),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(width: 0),
+                    borderSide: const BorderSide(width: 0),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:todo/view/new_tasks/widgets/categories_widget.dart';
+import 'package:todo/view/new_tasks/widgets/date_time_widget.dart';
+import 'package:todo/view/new_tasks/widgets/new_task_fields.dart';
 
 class NewTasksScreen extends StatelessWidget {
   const NewTasksScreen({Key? key}) : super(key: key);
@@ -19,77 +22,29 @@ class NewTasksScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'What you need to do ?',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400),
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                 focusedBorder: UnderlineInputBorder(borderSide: BorderSide(
-                   color: Colors.white,
-                 ),),
-                  enabledBorder: UnderlineInputBorder(borderSide: BorderSide(
-                    color: Colors.white,
-                  ),),
-                ),
-              ),
-              const SizedBox(height: 40,),
-              const Text(
-                'Notes',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400),
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(
-                    color: Colors.white,
-                  ),),
-                  enabledBorder: UnderlineInputBorder(borderSide: BorderSide(
-                    color: Colors.white,
-                  ),),
-                ),
-              ),
-              const SizedBox(height: 40,),
+            children: const [
+              NewTaskFields(),
+              DateTimeWidget(),
               SizedBox(
-                height: 80,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Expanded(
-                      child: Text(
-                        'Date',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        'Time',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ],
-                ),
-              )
+                height: 30,
+              ),
+              CategoryWidget(),
             ],
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){Navigator.pop(context);},
+          backgroundColor: Colors.white,
+          child: const Icon(
+            Icons.check,
+            color: Colors.blue,
+            size: 35,
+          )),
     );
   }
 }
