@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo/view/new_tasks/widgets/categories_widget.dart';
+import 'package:todo/view/new_tasks/widgets/container_widget.dart';
 import 'package:todo/view/new_tasks/widgets/date_time_widget.dart';
 import 'package:todo/view/new_tasks/widgets/new_task_fields.dart';
 
@@ -33,6 +34,10 @@ class NewTasksScreen extends StatelessWidget {
                 height: 30,
               ),
               CategoryWidget(),
+              SizedBox(
+                height: 30,
+              ),
+              ContainerWidget(),
             ],
           ),
         ),
