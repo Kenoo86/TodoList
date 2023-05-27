@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:todo/view/home/widgets/home_categories_widget.dart';
 import 'package:todo/view/home/widgets/tasks_widget.dart';
 import 'package:todo/view/home/widgets/time_row_widget.dart';
+import 'package:share_plus/share_plus.dart';
 
 class MyHomeScreen extends StatelessWidget {
   const MyHomeScreen({Key? key}) : super(key: key);

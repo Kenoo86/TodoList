@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class TasksWidgets extends StatelessWidget {
   const TasksWidgets({Key? key}) : super(key: key);
@@ -117,9 +118,12 @@ class TasksWidgets extends StatelessWidget {
                     shape: BoxShape.circle,
                     color: Colors.white38,
                   ),
-                  child: Image.asset(
-                    'assets/icons/forward.png',
-                    height: 25,
+                  child: GestureDetector(
+                    onTap:()=> Share.share('check out my website https://example.com'),
+                    child: Image.asset(
+                      'assets/icons/forward.png',
+                      height: 25,
+                    ),
                   ),
                 ),
                 const SizedBox(

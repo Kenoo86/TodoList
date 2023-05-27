@@ -71,8 +71,15 @@ class _TableMultiExampleState extends State<TableMultiExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         elevation: 0,
-        title: const Text('TableCalendar - Multi'),
+        title: const Text('Your Schedule',style: TextStyle(fontSize: 40),),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: IconButton(onPressed: (){}, icon: const Icon(Icons.clear_outlined,size: 40,)),
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -138,18 +145,55 @@ class _TableMultiExampleState extends State<TableMultiExample> {
                 return ListView.builder(
                   itemCount: value.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 12.0,
-                        vertical: 4.0,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: ListTile(
-                        onTap: () => print('${value[index]}'),
-                        title: Text('${value[index]}'),
+                    return GestureDetector(
+                      child: Container(
+                        margin: EdgeInsets.all(8),
+                        height: 60,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          color: Colors.white
+                        ),
+                        child:Row(
+                          children: [
+                            Container(
+                              width: 10,
+                              height: 60,
+                              color: Colors.yellow,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8,right: 120,),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text('12:00 PM',style: TextStyle(
+                                    color: Colors.grey,fontSize: 15
+                                  ),),
+                                  Text('Test Random Words',style: TextStyle(
+                                      color: Colors.black,fontSize: 18
+                                  ),)
+                                ],
+                              ),
+                            ),
+                            Container(
+                              width: 50,
+                              height: 20,
+                              decoration:  BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              child: const Center(
+                                child: Text('Work',style: TextStyle(
+                                  color: Colors.white,fontSize: 15,
+                                ),),
+                              ),
+                            ),
+                          ],
+                        )
+                        // ListTile(
+                        //   onTap: () => print('${value[index]}'),
+                        //   title: Text('${value[index]}'),
+                        // ),
                       ),
                     );
                   },
